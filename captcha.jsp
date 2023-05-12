@@ -27,7 +27,7 @@ if (request.getMethod().equals("POST")) {
     }
 
     // Invalidate the session so the captcha can't be reused
-    session.invalidate();
+    session.removeAttribute("captchaResult");
 
     // Verify the user's answer
     String userAnswer = request.getParameter("captchaAnswer");

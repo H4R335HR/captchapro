@@ -10,6 +10,7 @@
 //If user is not logged in, redirect him to login page
 if(session == null || session.getAttribute("user_id") == null) {
 	response.sendRedirect("login.jsp");
+	return;
 }
 
 // Generate two random numbers between 0 and 9

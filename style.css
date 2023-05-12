@@ -1,0 +1,121 @@
+.container {
+    margin: auto;
+    width: 30%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid gold ;
+    background-color: #f2f2f2;
+}
+
+button {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid gold ;
+    background-color: darkgreen;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+#reloadCaptcha {
+    display: inline-block;
+    vertical-align: middle;
+    /* width: 15%; */
+}
+
+#imgCaptcha {
+    display: inline-block;
+    vertical-align: middle;
+    width: fit-content;
+  }
+  
+#anchor {
+    margin-left: 10px;
+}
+
+
+h1, p {
+    text-align: center;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-weight: 500;
+  color: black;
+  font-size: large;
+}
+
+.username {
+  color: #242222;
+}
+
+.timestamp {
+  font-style: italic;
+  color: #666;
+  margin-left: 10px;
+}
+
+.text {
+  margin-top: 5px;
+}
+
+li {
+    padding: 10px;
+    border: 3px solid gold ;
+    border-radius: 5px;
+    margin: 12px;
+    color: silver;
+}
+
+ol {
+    border: 2px;    
+}
+
+.user-timestamp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+a[href="logout.jsp"] {
+    float: right;
+}
+
+ul li {
+    color: #141414;
+    border: none;
+    margin: none;
+    padding: 0px;
+}
+
+form[action="post_comment.jsp"] {
+    margin: 50px;
+}
+
+.comment-box {
+    margin: 50px;
+    width: 75%;
+}
+
+.info {
+    float: right;
+    color: #444;
+}

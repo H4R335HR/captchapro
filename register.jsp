@@ -21,7 +21,7 @@ if (user_id != null) {
 <body>
 	<div class="container">
 	<h1>User Registration</h1>
-	<form method="post" action="captcha.jsp">
+	<form method="post" action="server.jsp">
 		<label for="username">Username:</label>
 		<input type="text" name="username" required>
 		
@@ -41,9 +41,9 @@ if (user_id != null) {
 		</div>
 		<label for="captchaAnswer">Input the text shown above in the box below:</label>
 		<input type="text" id="captchaAnswer" name="captchaAnswer">
-		<input type="hidden" name="destination" value="server.jsp">
 		<h4><%= message %></h4>
 		<button type="submit" > Register </button>
+		<a href="login.jsp">Go to login page</a>
 	</form>
 	</div>
 	<script>

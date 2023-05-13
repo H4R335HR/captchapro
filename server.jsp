@@ -12,17 +12,40 @@
 	<div class="container">
 	<h1>User Registration</h1>
 	<%
+    String message = "";
     String user_id = (String) session.getAttribute("user_id");
 
     // Redirect to login page if unauthorized user is directly accssing the page 
     if (user_id == null && !request.getMethod().equals("POST")) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("register.jsp");
         return;
     } // Redirect to index if logged in user is accessing the page
     if (user_id != null) {
         response.sendRedirect("index.jsp");
         return;
     }
+
+    //Check Captcha
+    String userAnswer = request.getParameter("captchaAnswer");
+    // if captcha expired or is blank redirect to login
+    if (session.getAttribute("captchaResult") == null || userAnswer.trim().equals("")) {
+        message = "Captcha Blank or expired: Please try again";
+        request.setAttribute("message", message);
+        response.sendRedirect("register.jsp");
+        return;
+    }
+    // if captcha is wrong redirect back to comments section
+    String captchaResult = session.getAttribute("captchaResult").toString();
+    if (!userAnswer.equals(captchaResult)){
+        message = "Invalid Captcha: Please try again";
+        request.setAttribute("message", message);
+        RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+        rd.forward(request, response);
+        return;
+    } else {  //else reset captcha session variable so it cannot be reused
+        session.removeAttribute("captchaResult");
+    }
+
 
 	int rowsInserted=0;    
     try {
@@ -72,7 +95,7 @@
     conn.close();
 	%>
 	<% if(rowsInserted > 0) { %>
-		<p>Registration successful! </p><br/> <a href="login.jsp">Click here to login</a></p>
+		<p>Registration successful! </p><br/> <a href="register.jsp">Click here to login</a></p>
 	<% } else { %>
 		<p>Registration failed due to duplicate username, email or phone.<br/> <a href="register.jsp">Try Again</a></p>
 	<% } %>

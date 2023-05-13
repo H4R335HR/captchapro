@@ -22,6 +22,7 @@ if (request.getMethod().equals("POST")) {
         String contextPath = request.getContextPath();
         String relativePath = referer.substring(referer.indexOf(contextPath) + contextPath.length());
         RequestDispatcher rd = request.getRequestDispatcher(relativePath);
+        System.out.println(relativePath.toString());
         rd.forward(request, response);
         return;
     }
@@ -52,6 +53,7 @@ if (request.getMethod().equals("POST")) {
         String contextPath = request.getContextPath();
         String relativePath = referer.substring(referer.indexOf(contextPath) + contextPath.length());
         RequestDispatcher rd = request.getRequestDispatcher(relativePath);
+        System.out.println(relativePath.toString());
         rd.forward(request, response);
         return;
     }

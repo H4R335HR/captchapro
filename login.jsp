@@ -27,12 +27,11 @@ if (message == null) {
         <h1>Hello user from <%= request.getRemoteAddr() %></h1>
         <p>Please enter your credentials below to login.</p>
         <p>Current Time: <%= new Date() %></p>
-        <form method="post" action="captcha.jsp">
+        <form method="post" action="success.jsp">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br>
+            <input type="text" name="username" required><br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br>
-            <input type="hidden" name="destination" value="success.jsp">
+            <input type="password" name="password" required><br>
             <!-- Word-based captcha -->
             
             <div id="captchaContainer">
@@ -43,7 +42,7 @@ if (message == null) {
             </div>
             <br>
             <label for="captchaAnswer">Input the text shown above in the box below:</label>
-            <input type="text" id="captchaAnswer" name="captchaAnswer">
+            <input type="text" name="captchaAnswer" required>
             <h4><%= message %></h4>
             <button type="submit">Login</button>
             <a href="register.jsp">Click here to register</a>

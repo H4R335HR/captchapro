@@ -11,4 +11,4 @@ This is a web application built using Java, HTML, Javascript and MySQL. The appl
 3. Compile. Run `jar -cvf captchapro.war * ` or Open the project in your preferred Java IDE (Eclipse, IntelliJ IDEA, etc.) and compile to create a .WAR file
 4. Deploy.  `sudo cp captchapro.war /var/lib/tomcat9/webapps/` In my case the webapps directory is at /var/lib/tomcat9/webapps/
 5. Restart the server. In case of tomcat, `sudo service tomcat9 restart`
-6. Visit the configured port in your web browser for localhost (by default: http://localhost:8080)
+6. Visit the http://localhost:8080/captchapro (Replace 8080 if you have configured a different port for tomcat)

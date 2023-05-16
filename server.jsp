@@ -95,7 +95,7 @@
     conn.close();
 	%>
 	<% if(rowsInserted > 0) { %>
-		<p>Registration successful! </p><br/> <a href="register.jsp">Click here to login</a></p>
+		<p>Registration successful! </p><br/> <a href="login.jsp">Click here to login</a></p>
 	<% } else { %>
 		<p>Registration failed due to duplicate username, email or phone.<br/> <a href="register.jsp">Try Again</a></p>
 	<% } %>

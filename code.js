@@ -1,5 +1,6 @@
 function reloadCaptcha() {
-    location.reload();
+    var captchaImage = document.getElementById("imgCaptcha");
+    captchaImage.src = "captcha.jsp?" + new Date().getTime();
 }
 const span = document.createElement("span");
 span.classList.add("info");
